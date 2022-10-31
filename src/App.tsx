@@ -1,8 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import { Amplify, API, graphqlOperation } from 'aws-amplify'
 
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+
 import logo from './logo.svg';
 import './App.css';
+
+import { ThemeProvider } from '@emotion/react';
+import { Routes, Route } from 'react-router-dom';
+import { customTheme } from './styles/theme';
+import Home from './pages/home';
+import Login from './pages/login';
 
 //import awsExports from './aws-exports';
 //Amplify.configure(awsExports);
@@ -22,40 +33,14 @@ import "@aws-amplify/ui-react/styles.css";
 
 const App = () => {
   return (
-    <AmplifyProvider> 
-      <Authenticator>
-        {({ signOut, user }) => (
-          <Flex
-            direction="column"
-            justifyContent="flex-start"
-            alignItems="center"
-            alignContent="flex-start"
-            wrap="nowrap"
-            gap="1rem"
-            textAlign="center"
-          >
-            <View width="100%">
-              <Image src={logo} alt="logo" width={240} height={240} />
-            </View>
-
-            {user && (
-              <View width="100%">
-                <Text>Hello {user.username}</Text>
-                <Button onClick={signOut}>
-                  <Text>Sign Out</Text>
-                </Button>
-              </View>
-            )}
-
-            <View width="100%">
-              <Text>
-                Edit <code>src/App.tsx</code> and save to reload.
-              </Text>
-            </View>
-          </Flex>
-        )}
-      </Authenticator>
-    </AmplifyProvider>
+    <div className="App">
+      <ThemeProvider theme={customTheme}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+        </Routes>
+      </ThemeProvider>
+    </div>
   );
 };
 
