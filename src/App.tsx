@@ -15,6 +15,7 @@ import { customTheme } from './styles/theme';
 import Home from './pages/home';
 import Login from './pages/login';
 import Projects from './pages/projects';
+import ProjectDetail from './pages/project';
 
 //import awsExports from './aws-exports';
 //Amplify.configure(awsExports);
@@ -40,7 +41,7 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/project" element={<Projects />} />
-          <Route path="/project/:id" element={<Projects />} />
+          <Route path="/project/:id" element={<ProjectDetail />} />
         </Routes>
       </ThemeProvider>
     </div>

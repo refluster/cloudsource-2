@@ -4,7 +4,7 @@ import { Project } from '../types/project.d';
 const baseUrl = 'https://h7r7m5r0oj.execute-api.us-west-2.amazonaws.com/dev';
 
 const getProjects = async (id?: string) => {
-    const url = `${baseUrl}/project`;
+    const url = id? `${baseUrl}/project/${id}`: `${baseUrl}/project`;
     const config = {
         headers: {
         },
