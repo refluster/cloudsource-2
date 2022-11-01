@@ -40,15 +40,15 @@ export default function ProjectDetail(props: any) {
         py: 8,
         px: 6,
       }}>
-          <Typography sx={{mt: 1.5}} variant="body2">
-            {project.description}
-          </Typography>
-          <Typography sx={{mt: 1.5}} variant="body2">
-            Token total: {project.tokenTotal}
-          </Typography>
-          <Typography sx={{mt: 1.5}} variant="body2">
-            Point / token: {project.pointPerToken}
-          </Typography>
+        <Typography sx={{mt: 1.5}} variant="body2">
+          {project.description}
+        </Typography>
+        <Typography sx={{mt: 1.5}} variant="h5">
+          Token total: {project.tokenTotal}
+        </Typography>
+        <Typography sx={{mt: 1.5}} variant="h5">
+          Point / token: {project.pointPerToken}
+        </Typography>
       </Box>
     </Box>
   );
