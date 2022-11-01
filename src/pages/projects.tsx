@@ -29,26 +29,23 @@ export default function Projects() {
   }
 
   return (
-    <div>
+    <Box sx={{
+      display: 'flex',
+      py: 8,
+      px: 6,
+      gap: 4
+    }}>
       {
         projects.map((project: Project) => {
           return (
             <Card sx={{ minWidth: 275, maxWidth: 320 }}
               key={project.id}>
               <CardContent>
-                <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-                  Word of the Day
-                </Typography>
                 <Typography variant="h5" component="div">
                   {project.name}
                 </Typography>
-                <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                  adjective
-                </Typography>
-                <Typography variant="body2">
-                  well meaning and kindly.
-                  <br />
-                  {'"a benevolent smile"'}
+                <Typography sx={{mt: 1.5}} variant="body2">
+                  {project.description}
                 </Typography>
               </CardContent>
               <CardActions>
@@ -58,6 +55,6 @@ export default function Projects() {
           )
         })
       }
-    </div>
+    </Box>
   );
 }
