@@ -14,6 +14,7 @@ import { Routes, Route } from 'react-router-dom';
 import { customTheme } from './styles/theme';
 import Home from './pages/home';
 import Login from './pages/login';
+import Projects from './pages/projects';
 
 //import awsExports from './aws-exports';
 //Amplify.configure(awsExports);
@@ -38,6 +39,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/projects" element={<Projects />} />
         </Routes>
       </ThemeProvider>
     </div>
