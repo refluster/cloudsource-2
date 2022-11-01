@@ -30,14 +30,16 @@ export default function Projects() {
 
   return (
     <Box>
-      <Typography variant="h1">
+      <Typography variant="h3">
         Projects
-      </Typography>;
+      </Typography>
       <Box sx={{
         display: 'flex',
         py: 8,
         px: 6,
-        gap: 4
+        gap: 4,
+        flexWrap: 'wrap',
+        justifyContent: 'center',
       }}>
         {
           projects.map((project: Project) => {
@@ -52,7 +54,7 @@ export default function Projects() {
                     {project.description}
                   </Typography>
                 </CardContent>
-                <CardActions>
+                <CardActions >
                   <Button size="small">Learn More</Button>
                 </CardActions>
               </Card>

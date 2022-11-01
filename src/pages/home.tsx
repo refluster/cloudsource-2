@@ -22,9 +22,9 @@ export default function Home() {
                         Login
                     </ListItemButton>
                 </ListItem>
-                <ListItem key={'projects'} component="div" disablePadding>
-                    <ListItemButton href="/projects">
-                        Projects
+                <ListItem key={'project'} component="div" disablePadding>
+                    <ListItemButton href="/project">
+                        Project
                     </ListItemButton>
                 </ListItem>
             </List>

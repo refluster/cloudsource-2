@@ -6,3 +6,12 @@ export type Project = {
     pointPerToken: number,
     description: string,
 }
+
+export const ProjectNull: Project = {
+    id: '',
+    name: '',
+    owner: '',
+    tokenTotal: undefined,
+    pointPerToken: undefined,
+    description: '',
+}

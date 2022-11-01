@@ -39,7 +39,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/projects" element={<Projects />} />
+          <Route path="/project" element={<Projects />} />
+          <Route path="/project/:id" element={<Projects />} />
         </Routes>
       </ThemeProvider>
     </div>

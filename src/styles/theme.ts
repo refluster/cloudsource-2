@@ -1,6 +1,7 @@
 import { createTheme } from '@mui/material';
 
 export const themeOptions = {
+/*
     palette: {
         type: 'dark',
         primary: {
@@ -10,6 +11,7 @@ export const themeOptions = {
             main: '#f50057',
         },
     },
+    */
     spacing: 8,
 };
 
