@@ -55,7 +55,7 @@ export default function Projects() {
                   </Typography>
                 </CardContent>
                 <CardActions >
-                  <Button size="small">Learn More</Button>
+                  <Button size="small" href={'/project/' + project.id}>Learn More</Button>
                 </CardActions>
               </Card>
             )
