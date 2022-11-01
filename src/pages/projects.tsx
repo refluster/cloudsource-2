@@ -29,32 +29,38 @@ export default function Projects() {
   }
 
   return (
-    <Box sx={{
-      display: 'flex',
-      py: 8,
-      px: 6,
-      gap: 4
-    }}>
-      {
-        projects.map((project: Project) => {
-          return (
-            <Card sx={{ minWidth: 275, maxWidth: 320 }}
-              key={project.id}>
-              <CardContent>
-                <Typography variant="h5" component="div">
-                  {project.name}
-                </Typography>
-                <Typography sx={{mt: 1.5}} variant="body2">
-                  {project.description}
-                </Typography>
-              </CardContent>
-              <CardActions>
-                <Button size="small">Learn More</Button>
-              </CardActions>
-            </Card>
-          )
-        })
-      }
+    <Box>
+      <Typography variant="h1">
+        Projects
+      </Typography>;
+      <Box sx={{
+        display: 'flex',
+        py: 8,
+        px: 6,
+        gap: 4
+      }}>
+        {
+          projects.map((project: Project) => {
+            return (
+              <Card sx={{ minWidth: 275, maxWidth: 320 }}
+                key={project.id}>
+                <CardContent>
+                  <Typography variant="h5" component="div">
+                    {project.name}
+                  </Typography>
+                  <Typography sx={{mt: 1.5}} variant="body2">
+                    {project.description}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button size="small">Learn More</Button>
+                </CardActions>
+              </Card>
+            )
+          })
+        }
+      </Box>
     </Box>
+
   );
 }
