@@ -6,32 +6,35 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
-
-type Project = {
-  name: string
-}
-const PROJECTS = [
-  {
-    name: 'prj0',
-  }, {
-    name: 'prj1',
-  }
-]
+import { Project } from '../types/project.d';
+import api from '../api/project';
 
 export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([])
 
   useEffect(()=>{
     console.log('useEffectが実行されました')
-    setProjects(PROJECTS);
-  },[projects])
+    getProjects()
+  }, [])
+
+  const getProjects = async () => {
+    try {
+      const _projects = await api.getProjects();
+      if (_projects !== undefined) {
+        setProjects(_projects);
+      }
+    } catch (err) {
+      console.error(err)
+    }
+  }
 
   return (
     <div>
       {
         projects.map((project: Project) => {
           return (
-            <Card sx={{ minWidth: 275, maxWidth: 320 }}>
+            <Card sx={{ minWidth: 275, maxWidth: 320 }}
+              key={project.id}>
               <CardContent>
                 <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
                   Word of the Day
