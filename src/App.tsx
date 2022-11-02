@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
@@ -6,6 +6,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
 import './App.css';
+import { RequireAuth } from './components/require-auth';
 
 import { ThemeProvider } from '@emotion/react';
 import { Routes, Route } from 'react-router-dom';
@@ -24,7 +25,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/project" element={<Projects />} />
+          <Route path="/project" element={<RequireAuth><Projects /></RequireAuth>} />
           <Route path="/project/:id" element={<ProjectDetail />} />
         </Routes>
       </ThemeProvider>
