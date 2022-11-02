@@ -2,10 +2,6 @@ import React from 'react';
 import { useParams } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 import Box from '@mui/material/Box';
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import { Project, ProjectNull } from '../types/project.d';
 import api from '../api/project';
@@ -15,8 +11,7 @@ export default function ProjectDetail(props: any) {
   const [project, setProject] = useState<Project>(ProjectNull);
   console.log('id', id);
 
-  useEffect(()=>{
-    console.log('useEffectが実行されました');
+  useEffect(() => {
     getProject();
   }, [id])
 
