@@ -1,12 +1,23 @@
 import React from 'react';
-import { useLocation, NavLink } from 'react-router-dom';
+import { Outlet, useNavigate, useLocation, NavLink } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import { useAuthenticator } from '@aws-amplify/ui-react';
 
 export default function Home() {
+    const { route, signOut } = useAuthenticator((context) => [
+        context.route,
+        context.signOut,
+    ]);
+    const navigate = useNavigate();
+    function logOut() {
+        signOut();
+        navigate('/login');
+    }
+
     return (
         <Box sx={{
             display: 'flex',
@@ -28,6 +39,9 @@ export default function Home() {
                     </ListItemButton>
                 </ListItem>
             </List>
+            <Box>
+                {route === 'authenticated' ? 'You are logged in!' : 'Please Login!'}
+            </Box>
         </Box>
     );
 }
